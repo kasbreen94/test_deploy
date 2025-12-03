@@ -15,6 +15,6 @@ jobs:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          script: | 
-            export PATH="$PATH:$HOME/usr/.yarn/bin"
+          request_pty: |
             yarn -v
+          
