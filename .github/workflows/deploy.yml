@@ -27,7 +27,7 @@ jobs:
             shopt -s extglob
             rm -rf !( "dist" | "package.json" | "vite.config.ts" )
             shopt -u extglob
-            ls
+            ls -la
             cd ~/
             rm -rf test_deploy
             mv ~/test_new/test_deploy ~/test_deploy
