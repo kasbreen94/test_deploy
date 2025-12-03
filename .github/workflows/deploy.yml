@@ -16,5 +16,8 @@ jobs:
           script: |
             export PATH="$PATH:/home/${{ secrets.SSH_USERNAME }}/.nvm/versions/node/v22.16.0/bin"
             rm -r ~/test
-
+            mkdir ~/test
+            cd test
+            git clone git@github.com:kasbreen94/test_deploy.git
+            yarn install
           
