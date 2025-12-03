@@ -7,17 +7,18 @@ jobs:
 
     steps:
       - uses: actions/checkout@v5
+      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
       - name: SSH Deploy
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
+          
           script: |
             export PATH="$PATH:/home/${{ secrets.SSH_USERNAME }}/.nvm/versions/node/v22.16.0/bin"
-            rm -r ~/test
-            mkdir ~/test
-            cd test
+            rm -r ~/test_deploy
             git clone git@github.com:kasbreen94/test_deploy.git
+            cd ~/test_deploy
             yarn install
           
