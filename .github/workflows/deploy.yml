@@ -7,14 +7,13 @@ jobs:
 
     steps:
       - uses: actions/checkout@v5
-      - run: yarn install
-      - run: yarn build
       - name: SSH Deploy
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          request_pty: |
+          script: |
+            export PATH="$PATH:/home/${{ secrets.SSH_USERNAME }}/.yarn/bin/"
             yarn -v
           
