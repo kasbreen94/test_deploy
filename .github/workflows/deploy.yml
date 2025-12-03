@@ -15,5 +15,6 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             export PATH="$PATH:/home/${{ secrets.SSH_USERNAME }}/.nvm/versions/node/v22.16.0/bin"
-            yarn -v
+            rm -r ~/test
+
           
