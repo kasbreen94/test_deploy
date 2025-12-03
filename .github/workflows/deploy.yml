@@ -23,7 +23,8 @@ jobs:
             cd test_deploy
             yarn install
             yarn build
-            rm -rf !(dist|package.json|vite.config.ts)
+            ls -la 
+            rm -rf !("dist" | "package.json" | "vite.config.ts")
             cd ~/
             rm -rf test_deploy
             mv ~/test_new/test_deploy ~/test_deploy
