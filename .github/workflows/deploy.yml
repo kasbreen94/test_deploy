@@ -19,10 +19,8 @@ jobs:
             mkdir ~/test_new
             cd test_new
             git clone git@github.com:kasbreen94/test_deploy.git
-            rm -r ~/test_deploy -y
+            rm -r ~/test_deploy 
             mv ~/test_new/test_deploy ~/test_deploy
-            rm -r ~/test_new -y
+            rm -r ~/test_new
             cd ~/test_deploy
             yarn install
-            
-          
