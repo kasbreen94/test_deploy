@@ -7,7 +7,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v5
-      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
+      - run: echo "💡 The ${{ github.workspace}} repository has been cloned to the runner."
       - name: SSH Deploy
         uses: appleboy/ssh-action@master
         with:
