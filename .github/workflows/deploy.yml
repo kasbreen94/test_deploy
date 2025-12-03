@@ -16,12 +16,17 @@ jobs:
           
           script: |
             export PATH="$PATH:/home/${{ secrets.SSH_USERNAME }}/.nvm/versions/node/v22.16.0/bin"
-            mkdir ~/test_new
+            cd ~/
+            mkdir test_new
             cd test_new
             git clone git@github.com:kasbreen94/test_deploy.git
-            rm -r ~/test_deploy 
-            mv ~/test_new/test_deploy ~/test_deploy
-            rm -r ~/test_new
-            cd ~/test_deploy
+            cd test_deploy
             yarn install
             yarn build
+            rm -rf !(dist|package.json|vite.config.ts)
+            cd ~/
+            rm -rf test_deploy
+            mv ~/test_new/test_deploy ~/test_deploy
+            rm -rf test_new
+            ls -la test_deploy
+           
