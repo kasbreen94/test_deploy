@@ -25,7 +25,7 @@ jobs:
             yarn build
             ls -la 
             shopt -s extglob
-            rm -rf !("dist" | "package.json" | "vite.config.ts")
+            rm -rf !(dist|package.json|vite.config.ts)
             shopt -u extglob
             ls -la
             cd ~/
