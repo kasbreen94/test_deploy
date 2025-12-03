@@ -24,3 +24,4 @@ jobs:
             rm -r ~/test_new
             cd ~/test_deploy
             yarn install
+            yarn build
